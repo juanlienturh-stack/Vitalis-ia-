@@ -1,34 +1,77 @@
+
 {
-  "name": "Vitalis AI - Health & Fitness",
+  "name": "Vitalis AI - Health & Fitness Intelligence",
   "short_name": "Vitalis AI",
-  "description": "Tu asistente personal de salud, fitness y estética con IA",
+  "description": "Asistente personal de salud, fitness y estética con IA avanzada, multi-perfil y análisis 3D",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
   "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["health", "fitness", "lifestyle"],
+  "lang": "es",
+  "dir": "ltr",
+  
   "icons": [
     {
-      "src": "assets/icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/icon-512x512.png",
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect fill='%23000' width='512' height='512' rx='128'/%3E%3Cpath fill='url(%23g)' d='M256 96c-88 0-160 72-160 160s72 160 160 160 160-72 160-160S344 96 256 96zm0 280c-66 0-120-54-120-120s54-120 120-120 120 54 120 120-54 120-120 120z'/%3E%3Cpath fill='%2300d4ff' d='M256 128c-70 0-128 58-128 128s58 128 128 128 128-58 128-128-58-128-128-128zm0 224c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z'/%3E%3Ccircle fill='%23ec4899' cx='256' cy='256' r='48'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300d4ff'/%3E%3Cstop offset='100%25' style='stop-color:%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
-  "permissions": [
-    "camera",
-    "accelerometer",
-    "gyroscope",
-    "magnetometer",
-    "geolocation"
-  ]
+  
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Dashboard de Vitalis AI"
+    }
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Escanear Comida",
+      "short_name": "Comida",
+      "description": "Escanear alimento con IA",
+      "url": "/?action=scan-food",
+      "icons": [{ "src": "icon-food.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Iniciar Entreno",
+      "short_name": "Entrenar",
+      "description": "Comenzar rutina de hoy",
+      "url": "/?action=workout",
+      "icons": [{ "src": "icon-workout.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Asistente IA",
+      "short_name": "IA",
+      "description": "Chat con el asistente",
+      "url": "/?action=ai-chat",
+      "icons": [{ "src": "icon-ai.png", "sizes": "96x96" }]
+    }
+  ],
+  
+  "related_applications": [],
+  "prefer_related_applications": false,
+  
+  "share_target": {
+    "action": "/share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "name",
+      "text": "description",
+      "url": "link",
+      "files": [
+        {
+          "name": "media",
+          "accept": ["image/*", "video/*"]
+        }
+      ]
+    }
+  }
 }
